@@ -33,10 +33,16 @@ addForm. addEventListener('submit', function(e){
     // append to DOM
     li.appendChild(bookName);
     li.appendChild(deleteBtn);
-    list.appendChild(li);
-    
-    
-    
+    list.appendChild(li);   
+});
+    // hide books
+    const hideBox =document.querySelector('#hide');
+    hideBox.addEventListener('change', function(e){
+        if(hideBox.checked){
+            list.style.display ="none"
+        } else{
+            list.style.display = "initial";
+        }
 });
 // const search = document.getElementById('search-books');
 // const bookList = document.getElementById('book-list');
