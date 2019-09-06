@@ -26,10 +26,16 @@ addForm. addEventListener('submit', function(e){
     deleteBtn.textContent = 'delete';
     bookName.textContent = value;
     
+    // Add classes
+    bookName.classList.add('name');
+    deleteBtn.classList.add('delete')
+    
     // append to DOM
     li.appendChild(bookName);
     li.appendChild(deleteBtn);
     list.appendChild(li);
+    
+    
     
 });
 // const search = document.getElementById('search-books');
