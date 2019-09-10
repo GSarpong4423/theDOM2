@@ -1,15 +1,22 @@
   
-const bookList = document.querySelector('#book-list');
+var btns = document.querySelectorAll('#book-list .delete');
 
-console.log('book-List next siblingis:', bookList.nextSibling);
-console.log('book-List next element sibling is:', bookList.nextElementSibling);
+Array.from(btns).forEach(function(btn){
+    btn.addEventListener('click',function(e){
+        
+        const li = e.target.parentElement;
+        
+        li.parentNode.removeChild(li)
+        
+    });
+});
 
+const link = document.querySelector('#page-banner a');
 
-console.log('book-List previous siblingis:', bookList.previousSibling);
-console.log('book-List previous element sibling is:', bookList.previousElementSibling);
-
-
-bookList.previousElementSibling.querySelector('p').innerHTML += '<br/>Too cool for everyone else'
+link.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log('navigation to', e.target.textContent, 'was prevented')
+});
 // const search = document.getElementById('search-books');
 // const bookList = document.getElementById('book-list');
 
